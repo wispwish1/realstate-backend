@@ -11,7 +11,7 @@ from io import BytesIO
 app = Flask(__name__)
 
 # URL of your FastAPI backend
-FASTAPI_BASE_URL = os.getenv("FASTAPI_URL", "http://127.0.0.1:8000")
+FASTAPI_BASE_URL = os.getenv("FASTAPI_URL", "http://127.0.0.1:8000" , "https://haseeb467.pythonanywhere.com/")
 
 
 @app.route("/")
