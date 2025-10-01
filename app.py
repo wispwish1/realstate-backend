@@ -7,8 +7,12 @@ import pandas as pd
 from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import letter
 from io import BytesIO
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)  # Allow sab origins ke liye (development ke liye theek hai)
+CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+
 
 # URL of your FastAPI backend
 FASTAPI_BASE_URL = os.getenv("FASTAPI_URL", "http://127.0.0.1:8000" , )

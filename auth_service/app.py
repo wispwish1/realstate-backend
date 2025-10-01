@@ -17,6 +17,7 @@ from sqlalchemy.orm import sessionmaker, Session
 from pydantic import BaseModel, EmailStr
 from passlib.context import CryptContext
 from jose import JWTError, jwt
+from flask_cors import CORS
 
 from datetime import datetime, timedelta
 
