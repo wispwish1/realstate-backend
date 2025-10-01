@@ -10,8 +10,12 @@ from io import BytesIO
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # Allow sab origins ke liye (development ke liye theek hai)
-CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+# Remove duplicate CORS configuration
+# CORS(app)  # Allow sab origins ke liye (development ke liye theek hai)
+# CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
+
+# Add proper CORS configuration with all needed origins
+CORS(app, resources={r"/*": {"origins": ["http://localhost:5173", "http://localhost:3000", "https://haseeb467.pythonanywhere.com"]}})
 
 
 # URL of your FastAPI backend

@@ -29,6 +29,8 @@ from twilio.rest import Client as TwilioClient
 
 # --- Load Environment Variables ---
 load_dotenv()
+CORS(app)  # Allow sab origins ke liye (development ke liye theek hai)
+CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 
 # --- Configuration ---
 AUTH_SECRET_KEY = os.environ.get("AUTH_SECRET_KEY")
